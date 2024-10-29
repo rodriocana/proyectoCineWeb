@@ -14,8 +14,17 @@ export class MovieListComponent implements OnInit {
   constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe(response => {
-      this.movies = response.results;
+    this.movieService.getMovies().subscribe({
+      next: resp =>{
+        // this.movies = resp.results;
+        this.movies = resp.body.results;
+      },
+      error: error =>{
+        if (error.error.code === 404){
+          console.log(error.error.error);
+
+        }
+      },
     });
   }
 

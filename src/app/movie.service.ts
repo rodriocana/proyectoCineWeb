@@ -13,10 +13,13 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   getMovies(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrl,
+    {
+      observe: 'response'
+    });
   }
 
   getMovieDetails(id: number): Observable<any> {
-    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}&language=es-ES`);
+    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}&language=es-ES`, {observe: 'response'});
   }
 }

@@ -6,17 +6,28 @@ import { MovieService } from '../movie.service';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  styleUrls: ['./movie-detail.component.css'],
 })
 export class MovieDetailComponent implements OnInit {
   movie: any;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService
+  ) {}
 
   ngOnInit(): void {
     const movieId = this.route.snapshot.params['id'];
-    this.movieService.getMovieDetails(movieId).subscribe(data => {
-      this.movie = data;
-    });
+    if (movieId) {
+      this.movieService.getMovieDetails(+movieId).subscribe(
+        (response) => {
+          this.movie = response.body;
+        },
+
+        (error) => {
+          console.error('Error al obtener detalles de la pelicula', error);
+        }
+      );
+    }
   }
 }

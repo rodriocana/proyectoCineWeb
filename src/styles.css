@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+/* Estilos generales */
+body, html {
+  background-image: url("./assets/wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', 'Courier New', Courier, monospace, serif, sans-serif;
+  color: #ffffff;
+  background-color: #004080; /* Fondo azul */
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color:rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  display: flex; /* Usar flexbox */
+  justify-content: space-between; /* Espacio entre el título y la navegación */
+  align-items: center; /* Centrar verticalmente los elementos */
+  color: black;
+  border-bottom: 2px solid #180d02;
+}
+
+header h1 {
+  font-size: 2em;
+  color:white;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  margin-top: 0; /* Eliminar margen superior */
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #80bfff;
+}
+
+/* Estilos para el contenido principal */
+router-outlet {
+  display: block;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #003366;
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  border-top: 2px solid #002244;
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.5em;
+  }
+
+  nav a {
+      margin: 0 10px;
+      font-size: 1em;
+  }
+
+  footer {
+      font-size: 0.8em;
+  }
+}
