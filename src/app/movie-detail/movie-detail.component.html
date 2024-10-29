@@ -1,0 +1,8 @@
+<!-- src/app/movie-detail/movie-detail.component.html -->
+<div *ngIf="movie" class="movie-details" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')'}">
+  <h2>{{ movie.title }}</h2>
+  <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" [alt]="movie.title">
+  <p>{{ movie.overview }}</p>
+  <p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p>
+  <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+</div>

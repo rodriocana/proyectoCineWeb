@@ -1,0 +1,51 @@
+/* Asegúrate de que el video ocupe toda la pantalla */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(24, 165, 87);
+  font-family: 'Roboto', sans-serif; /* Fuente general */
+}
+
+/* Estilo del fondo */
+.landing-background {
+  background-color: #ff0000; /* Fondo rojo */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido sobre el fondo */
+.overlay-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+/* Estilo del título */
+h1 {
+  font-size: 60px; /* Tamaño del título */
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto para mayor contraste */
+}
+
+/* Puedes agregar un botón de inicio aquí, si lo deseas */
+.button {
+  margin-top: 20px; /* Espacio superior para el botón */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo del botón */
+  color: #ff0000; /* Color del texto del botón */
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 1); /* Efecto al pasar el mouse */
+  transform: scale(1.05); /* Agrandamiento suave */
+}

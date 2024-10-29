@@ -1,0 +1,7 @@
+<!-- src/app/movie-list/movie-list.component.html -->
+<section class="movie-container">
+  <div *ngFor="let movie of movies" class="movie-card" (click)="goToMovieDetails(movie.id)">
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" [alt]="movie.title">
+    <h2>{{ movie.title }}</h2>
+  </div>
+</section>

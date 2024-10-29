@@ -1,0 +1,77 @@
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #004080; /* Fondo azul */
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #10b7e0;
+  padding: 15px;
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 5px solid #180d02;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #80bfff;
+}
+
+/* Estilos para el contenido principal */
+router-outlet {
+  display: block;
+
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #003366;
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  border-top: 2px solid #002244;
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.5em;
+  }
+
+  nav a {
+      margin: 0 10px;
+      font-size: 1em;
+  }
+
+  footer {
+      font-size: 0.8em;
+  }
+}
