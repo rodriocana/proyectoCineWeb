@@ -26,4 +26,8 @@ export class MovieService {
   getMovieImages(id: number): Observable<any> {
     return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/images?api_key=${this.apiKey}`);
   }
+
+  getMovieVideos(id: number): Observable<any> {
+    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.apiKey}&language=es-ES`);
+  }
 }

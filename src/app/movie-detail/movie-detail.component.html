@@ -3,21 +3,16 @@
 
   <div class="main-content">
     <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" [alt]="movie.title" class="movie-poster">
-    <!--<p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p>
-    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>-->
     <div class="button-container">
       <button (click)="verSinopsis()" id="sinopsis">Ver Sinopsis</button>
-      <button  id="comprarEntrada">Comprar Entrada</button>
+      <button id="comprarEntrada">Comprar Entrada</button>
+      <button id="verTrailer" *ngIf="trailerUrl" (click)="openTrailer()">Ver Trailer</button> <!-- Botón para ver trailer -->
     </div>
   </div>
 
-  <!-- Contenedor flex para thumbnails y el botón -->
   <div class="thumbnail-button-container">
     <div class="thumbnail-container">
       <img *ngFor="let backdrop of backdrops" [src]="backdrop" class="thumbnail">
     </div>
-
-    <!-- Contenedor para el botón, alineado a la parte inferior -->
-
   </div>
 </div>
