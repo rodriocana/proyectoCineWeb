@@ -11,6 +11,6 @@ export class AppComponent {
 
   isMovieDetailsPage(): boolean {
     // Verifica si la ruta actual contiene 'movie/'
-    return this.router.url.includes('movies');   // si esto es true, se pasa al app-component.html para verificar
+    return this.router.url.includes('movieList');   // si esto es true, se pasa al app-component.html para verificar
   }
 }

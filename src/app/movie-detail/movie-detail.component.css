@@ -8,21 +8,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Cambiado a flex-start para alinear a la izquierda */
-  justify-content: flex-start; /* Cambiado a flex-start para alinear a la izquierda */
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  text-align: center;
-  padding-left: 40px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  backdrop-filter: blur(5px); /* Añade un efecto de desenfoque en el fondo */
+  padding-left: 26px;
+   backdrop-filter: blur(5px); /* Añade un efecto de desenfoque en el fondo */
 }
 
 /* Estilos del título */
 .movie-details h2 {
   font-size: 3em;
   font-weight: bold;
+  margin-top: 30px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra para mejor visibilidad */
 }
 
@@ -30,15 +27,11 @@
 .movie-details img {
   width: 240px;
   height: auto;
+  margin-top: -20px;
   border-radius: 10px;
   border: 2px solid rgb(230, 127, 31);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
 
-}
-
-/* Contenedor principal para imagen y miniaturas */
-.main-content {
-  align-items: end; /* Alinear elementos en la parte superior */
 }
 
 
@@ -50,8 +43,9 @@
 .thumbnail-container {
   display: flex;
   flex-direction: row; /* Apilar miniaturas horizontalmente */
-  gap: 10px; /* Espacio entre miniaturas */
-  margin-right: 20px; /* Espacio entre miniaturas y botón */
+  gap: 7px; /* Espacio entre miniaturas */
+  margin-right: 0px; /* Espacio entre miniaturas y botón */
+  margin-top: 30px;
 }
 /* Estilos de la descripción */
 .movie-details p {
@@ -93,12 +87,6 @@
   }
 }
 
-/* Estilos de las miniaturas */
-.backdrop-thumbnails {
-  display: flex;
-  gap: 10px; /* Espacio entre miniaturas */
-
-}
 
 .thumbnail img {
   width: 80px; /* Ajusta el ancho según sea necesario */
@@ -115,6 +103,7 @@
   display: flex; /* Alinear el contenido en el contenedor */
   align-items: flex-end; /* Alinear el botón en la parte inferior */
   gap: 10px;
+  padding: 10px;
 }
 
 #sinopsis {

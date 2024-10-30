@@ -29,6 +29,6 @@ export class MovieListComponent implements OnInit {
   }
 
   goToMovieDetails(movieId: number): void {
-    this.router.navigate(['/movie', movieId]);
+    this.router.navigate(['/movieDetail', movieId]);
   }
 }

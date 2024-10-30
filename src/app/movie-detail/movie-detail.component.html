@@ -3,8 +3,12 @@
 
   <div class="main-content">
     <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" [alt]="movie.title" class="movie-poster">
-    <p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p>
-    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    <!--<p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p>
+    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>-->
+    <div class="button-container">
+      <button (click)="verSinopsis()" id="sinopsis">Ver Sinopsis</button>
+      <button  id="comprarEntrada">Comprar Entrada</button>
+    </div>
   </div>
 
   <!-- Contenedor flex para thumbnails y el botón -->
@@ -14,9 +18,6 @@
     </div>
 
     <!-- Contenedor para el botón, alineado a la parte inferior -->
-    <div class="button-container">
-      <button (click)="verSinopsis()" id="sinopsis">Ver Sinopsis</button>
-      <button  id="comprarEntrada">Comprar Entrada</button>
-    </div>
+
   </div>
 </div>
