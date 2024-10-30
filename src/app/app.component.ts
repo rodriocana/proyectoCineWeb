@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyectoCineWeb';
+  constructor(private router: Router) {}
+
+  isMovieDetailsPage(): boolean {
+    // Verifica si la ruta actual contiene 'movie/'
+    return this.router.url.includes('movies');   // si esto es true, se pasa al app-component.html para verificar
+  }
 }

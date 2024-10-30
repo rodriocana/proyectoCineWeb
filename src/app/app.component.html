@@ -1,18 +1,30 @@
-<!-- src/app/app.component.html -->
-
-<header>
-  <h1>CARTELERA CINE</h1>
+<header *ngIf="isMovieDetailsPage()">
+  <div class="icon-container">
+    <i class="fa-solid fa-ticket" id="icono"></i>
+  </div>
   <nav>
-    <a routerLink="/">Inicio</a>
-    <a routerLink="/movies">Cartelera</a>
-    <a routerLink="/movies">Tienda</a>
-    <a routerLink="/">Contacto</a>
-    <a routerLink="/movies">Login</a>
+    <a routerLink="/">
+      <i class="fas fa-home"></i> Inicio
+    </a>
+    <hr class="divider">
+    <a routerLink="/movies">
+      <i class="fas fa-film"></i> Cartelera
+    </a>
+    <hr class="divider">
+    <a routerLink="/store"> <!-- Cambié el link a /store para ser más claro -->
+      <i class="fas fa-shopping-cart"></i> Tienda
+    </a>
+    <hr class="divider">
+    <a routerLink="/">
+      <i class="fas fa-envelope"></i> Contacto
+    </a>
+    <hr class="divider">
+    <a routerLink="/login"> <!-- Cambié el link a /login para ser más claro -->
+      <i class="fas fa-sign-in-alt"></i> Login
+    </a>
   </nav>
 </header>
 <router-outlet></router-outlet>
-
-<!-- Aquí se cargan los componentes de las rutas -->
 
 <footer>
   <p>© 2024 Mi Aplicación de Películas</p>

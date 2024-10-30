@@ -1,48 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
-/* Estilos generales */
-body, html {
-  background-image: url("./assets/wallpaper.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  font-family: 'Times New Roman', 'Courier New', Courier, monospace, serif, sans-serif;
-  color: #ffffff;
-  background-color: #004080; /* Fondo azul */
-}
-
 /* Estilos para el encabezado */
-header {
-  background-color:rgba(0, 0, 0, 0.9);
-  padding: 15px;
-  display: flex; /* Usar flexbox */
-  justify-content: space-between; /* Espacio entre el título y la navegación */
-  align-items: center; /* Centrar verticalmente los elementos */
-  color: black;
-  border-bottom: 2px solid #180d02;
-}
+body, html {
+  height: 100%; /* Asegura que el body ocupe el 100% de la altura */
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 0px; /* Elimina el padding por defecto */
 
-header h1 {
-  font-size: 2em;
-  color:white;
-  margin: 0;
-  font-weight: bold;
+}
+header {
+  background-color:rgb(24, 24, 26);
+
+  padding: 40px;
+  display: flex; /* Usar flexbox */
+  flex-direction: column; /* Coloca el contenido en columna */
+  justify-content: flex-start; /* Alinea el contenido al inicio */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  border-right: rgb(179, 80, 15) solid 4px;
+  position: fixed; /* Fijo en la parte superior */
+  width: 200px; /* Ancho fijo para la barra lateral */
+  height: 100vh; /* Altura completa de la ventana */
+  z-index: 10; /* Asegúrate de que el header esté por encima de otros elementos */
 }
 
 /* Estilos para la barra de navegación */
 nav {
-  margin-top: 0; /* Eliminar margen superior */
+  display: flex; /* Cambia a flex para alinearlo */
+  flex-direction: column; /* Coloca los elementos en columna */
+  width: 100%; /* Ocupa todo el ancho del header */
+  padding-top: 15px; /* Espacio superior para el contenido del nav */
 }
 
 nav a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.1em;
+  color: rgb(235, 119, 11);
+  text-decoration: solid;
+  margin: 10px 20px; /* Espacio vertical entre los enlaces */
+  font-size: 1.3em;
   font-weight: 600;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Tahoma, sans-serif;
   transition: color 0.3s ease;
 }
 
@@ -50,14 +42,10 @@ nav a:hover {
   color: #80bfff;
 }
 
-/* Estilos para el contenido principal */
-router-outlet {
-  display: block;
-}
 
 /* Estilos para el pie de página */
 footer {
-  background-color: #003366;
+  background-color: rgb(179, 80, 15);
   text-align: center;
   padding: 10px;
   color: #ffffff;
@@ -84,4 +72,21 @@ footer p {
   footer {
       font-size: 0.8em;
   }
+}
+
+
+.divider {
+  border: none; /* Elimina el borde predeterminado */
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Color y grosor de la línea */
+  margin: 10px 0; /* Espacio vertical antes y después de la línea */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho del nav */
+}
+
+
+#icono{
+
+  color:white;
+  font-size: 40px;
+  margin-left: 65px;
+
 }
