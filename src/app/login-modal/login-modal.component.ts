@@ -1,8 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -15,7 +13,7 @@ export class LoginModalComponent {
 
   @Output() close = new EventEmitter<void>();
 
-  constructor(private router: Router, private auth: AngularFireAuth) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   closeModal() {
     this.close.emit();
@@ -23,18 +21,20 @@ export class LoginModalComponent {
 
   async onSubmit() {
     try {
-      const userCredential = await this.auth.signInWithEmailAndPassword(this.username, this.password);
-      // Usuario autenticado correctamente
-      alert('¡Has iniciado sesión correctamente!');
+      const userData = await this.userService.loginUser(this.username, this.password);
+      if (userData) {
+        alert(`¡Has iniciado sesión correctamente! \n Datos del usuario: ${JSON.stringify(userData)}`);
+      } else {
+        alert('No se encontraron datos para este usuario.');
+      }
       this.closeModal(); // Cierra el modal
     } catch (error) {
-      console.log(this.username,this.password);
-      // Error en la autenticación
+      console.error("Error en onSubmit:", error);
       alert('Error: Usuario o contraseña incorrectos');
     }
   }
 
   onRegister() {
-    this.router.navigate(['registro']); // Navega al formulario de registro
+    this.router.navigate(['registro']);
   }
 }

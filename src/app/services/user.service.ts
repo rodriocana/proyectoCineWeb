@@ -1,31 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, doc, setDoc } from '@angular/fire/firestore'; // Importa las funciones necesarias
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private auth: Auth, private firestore: Firestore) {}
+  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore) {}
 
-  async registerUser(nombre: string, correo: string, contrasena: string, saldo: number) {
+  async loginUser(correo: string, contrasena: string) {
     try {
-      const userCredential = await createUserWithEmailAndPassword(this.auth, correo, contrasena);
+      const userCredential = await this.auth.signInWithEmailAndPassword(correo, contrasena);
       const userId = userCredential.user?.uid;
 
       if (userId) {
-        // Usando collection y doc para acceder a la colección y documento
-        const userDocRef = doc(this.firestore, `usuarios/${userId}`);
-        await setDoc(userDocRef, {
-          idsocio: userId,
-          nombre: nombre,
-          correo: correo,
-          saldo: saldo,
-        });
-        console.log("Usuario registrado correctamente.");
+        const userDocRef = this.firestore.collection('Usuarios').doc(userId);
+        const userDoc = await userDocRef.get().toPromise(); // Convertir el observable en promesa
+
+        return userDoc?.exists ? userDoc.data() : null;
+      } else {
+        return null; // Si userId es undefined
       }
     } catch (error) {
-      console.error("Error al registrar el usuario:", error);
+      console.error("Error al iniciar sesión:", error);
+      throw error;
     }
   }
 }
